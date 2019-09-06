@@ -8,14 +8,14 @@ export default class {
 	ready(elm) {
 		var div = document.createElement("div");
 		div.id = "div" + this.number;
-		div.appendChild(this.createButtonHit());
-		div.appendChild(this.createButtonLost());
-		div.appendChild(this.createSpanPanel());
+		div.appendChild(this.newButtonHit());
+		div.appendChild(this.newButtonLost());
+		div.appendChild(this.newSpanPanel());
 		elm.appendChild(div);
 		this.count();
 	}
 
-	createButtonHit() {
+	newButtonHit() {
 		var btn = document.createElement("button");
 		btn.innerHTML = "Hit";
 		var me = this;
@@ -26,7 +26,7 @@ export default class {
 		return btn;
 	}
 
-	createButtonLost() {
+	newButtonLost() {
 		var btn = document.createElement("button");
 		btn.innerHTML = "Lost";
 		var me = this;
@@ -37,7 +37,7 @@ export default class {
 		return btn;
 	}
 
-	createSpanPanel() {
+	newSpanPanel() {
 		var spn = document.createElement("span");
 		spn.id = "panel" + this.number;
 		return spn;

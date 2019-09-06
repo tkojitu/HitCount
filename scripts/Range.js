@@ -6,7 +6,11 @@ export default class {
 	}
 
 	ready() {
-		var ref = new Referee(0);
+		this.newReferee();
+	}
+
+	newReferee() {
+		var ref = new Referee(this.referees.length);
 		ref.ready(document.getElementById("field"));
 		this.referees.push(ref);
 	}
