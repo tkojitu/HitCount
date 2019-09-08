@@ -18,6 +18,7 @@ export default class {
 	newButtonHit() {
 		var btn = document.createElement("button");
 		btn.innerHTML = "Hit";
+		btn.className = "buttonRange";
 		var me = this;
 		btn.onclick = function() {
 			me.nhit++;
@@ -29,6 +30,7 @@ export default class {
 	newButtonLost() {
 		var btn = document.createElement("button");
 		btn.innerHTML = "Lost";
+		btn.className = "buttonRange";
 		var me = this;
 		btn.onclick = function() {
 			me.nlost++;
@@ -40,6 +42,7 @@ export default class {
 	newSpanPanel() {
 		var spn = document.createElement("span");
 		spn.id = "panel" + this.number;
+		spn.className = "panelRange";
 		return spn;
 	}
 

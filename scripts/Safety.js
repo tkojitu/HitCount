@@ -11,6 +11,7 @@ export default class {
 	newButton() {
 		var btn = document.createElement("button");
 		btn.innerHTML = "Add Referee";
+		btn.className = "buttonSafety";
 		var me = this;
 		btn.onclick = function() {
 			me.rng.newReferee();
