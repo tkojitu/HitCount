@@ -13,6 +13,7 @@ export default class {
 		div.appendChild(this.newButtonMiss());
 		div.appendChild(this.newSpanSpace());
 		div.appendChild(this.newSpanPanel());
+		div.appendChild(this.newDivSpace());
 		elm.appendChild(div);
 		this.count();
 	}
@@ -53,6 +54,13 @@ export default class {
 		spn.id = "panel" + this.number;
 		spn.className = "spanPanel";
 		return spn;
+	}
+
+	newDivSpace() {
+		var div = document.createElement("div");
+		div.className = "divSpace";
+		div.innerHTML = "&nbsp;";
+		return div;
 	}
 
 	count() {
