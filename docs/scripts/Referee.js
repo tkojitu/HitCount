@@ -11,6 +11,7 @@ export default class {
 		div.appendChild(this.newButtonHit());
 		div.appendChild(this.newSpanSpace());
 		div.appendChild(this.newButtonMiss());
+		div.appendChild(this.newSpanSpace());
 		div.appendChild(this.newSpanPanel());
 		elm.appendChild(div);
 		this.count();
