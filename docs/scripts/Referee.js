@@ -2,14 +2,15 @@ export default class {
 	constructor(number) {
 		this.number = number;
 		this.nhit = 0;
-		this.nlost = 0;
+		this.nmiss = 0;
 	}
 
 	ready(elm) {
 		var div = document.createElement("div");
 		div.id = "div" + this.number;
 		div.appendChild(this.newButtonHit());
-		div.appendChild(this.newButtonLost());
+		div.appendChild(this.newSpanSpace());
+		div.appendChild(this.newButtonMiss());
 		div.appendChild(this.newSpanPanel());
 		elm.appendChild(div);
 		this.count();
@@ -27,13 +28,20 @@ export default class {
 		return btn;
 	}
 
-	newButtonLost() {
+	newSpanSpace() {
+		var spn = document.createElement("span");
+		spn.innerHTML = "&nbsp;";
+		spn.className = "spanSpace";
+		return spn;
+	}
+
+	newButtonMiss() {
 		var btn = document.createElement("button");
-		btn.innerHTML = "Lost";
+		btn.innerHTML = "Miss";
 		btn.className = "buttonRange";
 		var me = this;
 		btn.onclick = function() {
-			me.nlost++;
+			me.nmiss++;
 			me.count();
 		};
 		return btn;
@@ -42,7 +50,7 @@ export default class {
 	newSpanPanel() {
 		var spn = document.createElement("span");
 		spn.id = "panel" + this.number;
-		spn.className = "panelRange";
+		spn.className = "spanPanel";
 		return spn;
 	}
 
@@ -52,11 +60,15 @@ export default class {
 	}
 
 	write() {
-		return "" + this.nhit + "/" + this.nlost + " " + this.rate();
+		return "" + this.nhit + "/" + this.total() + " " + this.rate();
+	}
+
+	total() {
+		return this.nhit + this.nmiss;
 	}
 
 	rate() {
-		var total = this.nhit + this.nlost;
+		var total = this.total();
 		if (total == 0) {
 			return "0.0";
 		}
