@@ -69,7 +69,7 @@ export default class {
 	}
 
 	write() {
-		return "" + this.nhit + "/" + this.total() + " " + this.rate();
+		return "" + this.nhit + "/" + this.total() + " " + this.rates();
 	}
 
 	total() {
@@ -79,8 +79,12 @@ export default class {
 	rate() {
 		var total = this.total();
 		if (total == 0) {
-			return "0.0";
+			return 0;
 		}
 		return this.nhit / total * 100.0;
+	}
+
+	rates() {
+		return this.rate().toFixed(2);
 	}
 }
