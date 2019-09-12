@@ -1,9 +1,7 @@
-import Uniform from "./Uniform.js";
-
 export default class {
-	constructor(number) {
+	constructor(number, classUni) {
 		this.number = number;
-		this.uni = new Uniform(this);
+		this.uni = new classUni(this);
 		this.nhit = 0;
 		this.nmiss = 0;
 	}

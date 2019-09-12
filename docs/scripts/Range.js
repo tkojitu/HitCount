@@ -1,7 +1,7 @@
-import Referee from "./Referee.js";
-
 export default class {
-	constructor() {
+	constructor(classRef, classUni) {
+		this.classRef = classRef;
+		this.classUni = classUni;
 		this.referees = [];
 	}
 
@@ -10,7 +10,7 @@ export default class {
 	}
 
 	newReferee() {
-		var ref = new Referee(this.referees.length);
+		var ref = new this.classRef(this.referees.length, this.classUni);
 		ref.ready(document.getElementById("field"));
 		this.referees.push(ref);
 	}
